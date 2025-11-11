@@ -74,7 +74,7 @@ export default function Home() {
               Sign In
             </a>
             <a
-              href="https://app.duediligencepro.ai/sign-up/"
+              href="https://buy.stripe.com/8x29AS30r5Xz2PMg2zawo01"
               className="px-8 py-3 rounded-lg font-medium transition-all duration-300"
               style={{ backgroundColor: primaryColor, color: "white" }}
               onMouseEnter={(e) => {
