@@ -3,7 +3,6 @@ import { useEffect, useState } from "react"
 import { ThemeToggle } from "@/components/theme-toggle"
 
 export default function Home() {
-  const [visibleCards, setVisibleCards] = useState<number[]>([])
   const [isDark, setIsDark] = useState(true)
 
   useEffect(() => {
@@ -16,19 +15,10 @@ export default function Home() {
     }
     window.addEventListener("themechange", handleThemeChange)
 
-    // Stagger animation for feature cards
-    const timings = [0, 100, 200, 300]
-    timings.forEach((timing, idx) => {
-      setTimeout(() => {
-        setVisibleCards((prev) => [...prev, idx])
-      }, timing)
-    })
-
     return () => window.removeEventListener("themechange", handleThemeChange)
   }, [])
 
   const bgColor = isDark ? "#1a1a1a" : "#ffffff"
-  const cardBg = isDark ? "#262626" : "#f3f4f6"
   const borderColor = isDark ? "#404040" : "#e5e7eb"
   const textColor = isDark ? "#ffffff" : "#1f2937"
   const mutedColor = isDark ? "#9ca3af" : "#6b7280"
@@ -65,7 +55,7 @@ export default function Home() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="https://app.duediligencepro.ai"
+              href="https://app.duediligencepro.ai/"
               className="px-8 py-3 rounded-lg font-medium transition-all duration-300"
               style={{
                 border: `2px solid ${primaryColor}`,
@@ -84,7 +74,7 @@ export default function Home() {
               Sign In
             </a>
             <a
-              href="https://app.duediligencepro.ai"
+              href="https://app.duediligencepro.ai/sign-up/"
               className="px-8 py-3 rounded-lg font-medium transition-all duration-300"
               style={{ backgroundColor: primaryColor, color: "white" }}
               onMouseEnter={(e) => {
@@ -95,21 +85,6 @@ export default function Home() {
               }}
             >
               Create Account
-            </a>
-            <a
-              href="https://buy.stripe.com/8x29AS30r5Xz2PMg2zawo01"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-8 py-3 rounded-lg font-medium transition-all duration-300"
-              style={{ backgroundColor: primaryColor, color: "white" }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = "#2563eb"
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = primaryColor
-              }}
-            >
-              Subscribe Now
             </a>
           </div>
         </div>
