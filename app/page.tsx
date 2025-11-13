@@ -1,9 +1,10 @@
 "use client"
 
 export default function Home() {
-  const bgColor = "#1a1a1a"
-  const textColor = "#ffffff"
-  const primaryColor = "#3b82f6"
+  const bgColor = "#0a0a0f"
+  const textColor = "#e8e8f0"
+  const primaryColor = "#00d9ff"
+  const accentColor = "#0099cc"
 
   return (
     <>
@@ -30,54 +31,68 @@ export default function Home() {
           position: absolute;
           inset: 0;
           opacity: 0.4;
-          background: radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
-                      radial-gradient(circle at 80% 80%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
-                      radial-gradient(circle at 40% 20%, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
-          animation: gradientShift 15s ease infinite;
+          background: radial-gradient(circle at 20% 50%, rgba(0, 217, 255, 0.08) 0%, transparent 50%),
+                      radial-gradient(circle at 80% 80%, rgba(0, 153, 204, 0.06) 0%, transparent 50%),
+                      radial-gradient(circle at 40% 20%, rgba(0, 217, 255, 0.05) 0%, transparent 50%);
+          animation: gradientShift 20s ease infinite;
         }
         
         .grid-overlay {
           position: absolute;
           inset: 0;
           background-image: 
-            linear-gradient(rgba(59, 130, 246, 0.03) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(59, 130, 246, 0.03) 1px, transparent 1px);
-          background-size: 50px 50px;
-          opacity: 0.5;
+            linear-gradient(rgba(0, 217, 255, 0.03) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(0, 217, 255, 0.03) 1px, transparent 1px);
+          background-size: 80px 80px;
+          opacity: 0.4;
         }
         
         .glow-orb {
           position: absolute;
           border-radius: 50%;
-          filter: blur(80px);
-          animation: pulse 8s ease-in-out infinite;
+          filter: blur(150px);
+          animation: pulse 10s ease-in-out infinite;
         }
         
         .orb-1 {
-          width: 400px;
-          height: 400px;
-          background: rgba(59, 130, 246, 0.2);
-          top: -200px;
-          right: -200px;
+          width: 700px;
+          height: 700px;
+          background: rgba(0, 217, 255, 0.12);
+          top: -350px;
+          right: -350px;
           animation-delay: 0s;
         }
         
         .orb-2 {
-          width: 300px;
-          height: 300px;
-          background: rgba(139, 92, 246, 0.15);
-          bottom: -150px;
-          left: -150px;
-          animation-delay: 3s;
+          width: 600px;
+          height: 600px;
+          background: rgba(0, 153, 204, 0.1);
+          bottom: -300px;
+          left: -300px;
+          animation-delay: 4s;
         }
         
         .gradient-text {
-          background: linear-gradient(135deg, #fff 0%, #93c5fd 50%, #a5b4fc 100%);
+          background: linear-gradient(135deg, #00d9ff 0%, #00a3cc 50%, #0099cc 100%);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           background-clip: text;
-          animation: gradientFlow 8s ease infinite;
+          animation: gradientFlow 10s ease infinite;
           background-size: 200% auto;
+          filter: drop-shadow(0 0 30px rgba(0, 217, 255, 0.4));
+        }
+        
+        .scanline {
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(
+            to bottom,
+            transparent 50%,
+            rgba(0, 217, 255, 0.02) 50%
+          );
+          background-size: 100% 4px;
+          pointer-events: none;
+          opacity: 0.3;
         }
       `,
         }}
@@ -86,11 +101,11 @@ export default function Home() {
       <main style={{ backgroundColor: bgColor, color: textColor }}>
         {/* Header */}
         <header
-          className="fixed top-0 left-0 right-0 z-50 backdrop-blur-sm border-b"
-          style={{ backgroundColor: `${bgColor}dd`, borderBottomColor: "#404040" }}
+          className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b"
+          style={{ backgroundColor: `${bgColor}f5`, borderBottomColor: "#00d9ff15" }}
         >
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-            <span className="font-bold text-lg" style={{ color: textColor }}>
+            <span className="font-bold text-lg" style={{ color: primaryColor, textShadow: "0 0 8px rgba(0, 217, 255, 0.3)" }}>
               Due Diligence Pro
             </span>
           </div>
@@ -105,6 +120,9 @@ export default function Home() {
 
           {/* Grid overlay */}
           <div className="grid-overlay"></div>
+          
+          {/* Scanline effect */}
+          <div className="scanline"></div>
 
           {/* Glow orbs */}
           <div className="glow-orb orb-1"></div>
@@ -118,8 +136,8 @@ export default function Home() {
               <span className="gradient-text">Due Diligence Pro</span>
             </h1>
             <p
-              className="text-xl md:text-2xl mb-12 text-balance leading-relaxed font-medium"
-              style={{ color: primaryColor }}
+              className="text-xl md:text-2xl mb-12 text-balance leading-relaxed font-light"
+              style={{ color: "#8b9dc3" }}
             >
               where active and aspiring dealmakers coordinate their diligence process — all in one place.
             </p>
@@ -128,17 +146,22 @@ export default function Home() {
                 href="https://app.duediligencepro.ai/"
                 className="px-8 py-3 rounded-lg font-medium transition-all duration-300"
                 style={{
-                  border: `2px solid ${primaryColor}`,
+                  border: `1px solid ${primaryColor}`,
                   color: primaryColor,
                   backgroundColor: "transparent",
+                  boxShadow: `0 0 15px rgba(0, 217, 255, 0.2)`,
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = primaryColor
-                  e.currentTarget.style.color = "white"
+                  e.currentTarget.style.backgroundColor = `${primaryColor}15`
+                  e.currentTarget.style.borderColor = primaryColor
+                  e.currentTarget.style.boxShadow = `0 0 15px rgba(0, 217, 255, 0.25)`
+                  e.currentTarget.style.transform = "translateY(-2px)"
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.backgroundColor = "transparent"
-                  e.currentTarget.style.color = primaryColor
+                  e.currentTarget.style.borderColor = primaryColor
+                  e.currentTarget.style.boxShadow = `0 0 15px rgba(0, 217, 255, 0.2)`
+                  e.currentTarget.style.transform = "translateY(0)"
                 }}
               >
                 Sign In
@@ -146,12 +169,21 @@ export default function Home() {
               <a
                 href="https://app.duediligencepro.ai/sign-up/"
                 className="px-8 py-3 rounded-lg font-medium transition-all duration-300"
-                style={{ backgroundColor: primaryColor, color: "white" }}
+                style={{ 
+                  backgroundColor: primaryColor, 
+                  color: bgColor,
+                  boxShadow: `0 0 25px rgba(0, 217, 255, 0.3)`,
+                  border: `1px solid ${primaryColor}`,
+                }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = "#2563eb"
+                  e.currentTarget.style.backgroundColor = accentColor
+                  e.currentTarget.style.boxShadow = `0 0 20px rgba(0, 217, 255, 0.35)`
+                  e.currentTarget.style.transform = "translateY(-2px)"
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.backgroundColor = primaryColor
+                  e.currentTarget.style.boxShadow = `0 0 25px rgba(0, 217, 255, 0.3)`
+                  e.currentTarget.style.transform = "translateY(0)"
                 }}
               >
                 Create Account
