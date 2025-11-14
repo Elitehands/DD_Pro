@@ -1,10 +1,10 @@
 "use client"
 
 export default function Home() {
-  const bgColor = "#0a0a0f"
-  const textColor = "#e8e8f0"
-  const primaryColor = "#00d9ff"
-  const accentColor = "#0099cc"
+  const bgColor = "#0a0514"
+  const textColor = "#ffffff"
+  const primaryColor = "#a855f7"
+  const accentColor = "#d946ef"
 
   return (
     <>
@@ -30,10 +30,10 @@ export default function Home() {
         .gradient-bg {
           position: absolute;
           inset: 0;
-          opacity: 0.4;
-          background: radial-gradient(circle at 20% 50%, rgba(0, 217, 255, 0.08) 0%, transparent 50%),
-                      radial-gradient(circle at 80% 80%, rgba(0, 153, 204, 0.06) 0%, transparent 50%),
-                      radial-gradient(circle at 40% 20%, rgba(0, 217, 255, 0.05) 0%, transparent 50%);
+          opacity: 0.6;
+          background: radial-gradient(circle at 20% 50%, rgba(168, 85, 247, 0.2) 0%, transparent 50%),
+                      radial-gradient(circle at 80% 80%, rgba(217, 70, 239, 0.18) 0%, transparent 50%),
+                      radial-gradient(circle at 40% 20%, rgba(168, 85, 247, 0.15) 0%, transparent 50%);
           animation: gradientShift 20s ease infinite;
         }
         
@@ -41,10 +41,10 @@ export default function Home() {
           position: absolute;
           inset: 0;
           background-image: 
-            linear-gradient(rgba(0, 217, 255, 0.03) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(0, 217, 255, 0.03) 1px, transparent 1px);
+            linear-gradient(rgba(168, 85, 247, 0.5) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(168, 85, 247, 0.5) 1px, transparent 1px);
           background-size: 80px 80px;
-          opacity: 0.4;
+          opacity: 0.5;
         }
         
         .glow-orb {
@@ -57,7 +57,7 @@ export default function Home() {
         .orb-1 {
           width: 700px;
           height: 700px;
-          background: rgba(0, 217, 255, 0.12);
+          background: rgba(168, 85, 247, 0.2);
           top: -350px;
           right: -350px;
           animation-delay: 0s;
@@ -66,20 +66,14 @@ export default function Home() {
         .orb-2 {
           width: 600px;
           height: 600px;
-          background: rgba(0, 153, 204, 0.1);
+          background: rgba(217, 70, 239, 0.18);
           bottom: -300px;
           left: -300px;
           animation-delay: 4s;
         }
         
         .gradient-text {
-          background: linear-gradient(135deg, #00d9ff 0%, #00a3cc 50%, #0099cc 100%);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-          animation: gradientFlow 10s ease infinite;
-          background-size: 200% auto;
-          filter: drop-shadow(0 0 30px rgba(0, 217, 255, 0.4));
+          color: #ffffff;
         }
         
         .scanline {
@@ -88,7 +82,7 @@ export default function Home() {
           background: linear-gradient(
             to bottom,
             transparent 50%,
-            rgba(0, 217, 255, 0.02) 50%
+            rgba(168, 85, 247, 0.02) 50%
           );
           background-size: 100% 4px;
           pointer-events: none;
@@ -102,10 +96,10 @@ export default function Home() {
         {/* Header */}
         <header
           className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b"
-          style={{ backgroundColor: `${bgColor}f5`, borderBottomColor: "#00d9ff15" }}
+          style={{ backgroundColor: `${bgColor}f5`, borderBottomColor: "#a855f715" }}
         >
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-            <span className="font-bold text-lg" style={{ color: primaryColor, textShadow: "0 0 8px rgba(0, 217, 255, 0.3)" }}>
+            <span className="font-bold text-lg" style={{ color: "#ffffff" }}>
               Due Diligence Pro
             </span>
           </div>
@@ -137,9 +131,9 @@ export default function Home() {
             </h1>
             <p
               className="text-xl md:text-2xl mb-12 text-balance leading-relaxed font-light"
-              style={{ color: "#8b9dc3" }}
+              style={{ color: "#e0e0ff" }}
             >
-              where active and aspiring dealmakers coordinate their diligence process — all in one place.
+              Where active and aspiring dealmakers coordinate their diligence process — all in one place.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
@@ -147,20 +141,20 @@ export default function Home() {
                 className="px-8 py-3 rounded-lg font-medium transition-all duration-300"
                 style={{
                   border: `1px solid ${primaryColor}`,
-                  color: primaryColor,
+                  color: "#ffffff",
                   backgroundColor: "transparent",
-                  boxShadow: `0 0 15px rgba(0, 217, 255, 0.2)`,
+                  boxShadow: `0 0 10px rgba(168, 85, 247, 0.3)`,
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = `${primaryColor}15`
+                  e.currentTarget.style.backgroundColor = `${primaryColor}20`
                   e.currentTarget.style.borderColor = primaryColor
-                  e.currentTarget.style.boxShadow = `0 0 15px rgba(0, 217, 255, 0.25)`
+                  e.currentTarget.style.boxShadow = `0 0 15px rgba(168, 85, 247, 0.4)`
                   e.currentTarget.style.transform = "translateY(-2px)"
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.backgroundColor = "transparent"
                   e.currentTarget.style.borderColor = primaryColor
-                  e.currentTarget.style.boxShadow = `0 0 15px rgba(0, 217, 255, 0.2)`
+                  e.currentTarget.style.boxShadow = `0 0 10px rgba(168, 85, 247, 0.3)`
                   e.currentTarget.style.transform = "translateY(0)"
                 }}
               >
@@ -171,18 +165,18 @@ export default function Home() {
                 className="px-8 py-3 rounded-lg font-medium transition-all duration-300"
                 style={{ 
                   backgroundColor: primaryColor, 
-                  color: bgColor,
-                  boxShadow: `0 0 25px rgba(0, 217, 255, 0.3)`,
+                  color: "#ffffff",
+                  boxShadow: `0 0 20px rgba(168, 85, 247, 0.4)`,
                   border: `1px solid ${primaryColor}`,
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.backgroundColor = accentColor
-                  e.currentTarget.style.boxShadow = `0 0 20px rgba(0, 217, 255, 0.35)`
+                  e.currentTarget.style.boxShadow = `0 0 25px rgba(217, 70, 239, 0.5)`
                   e.currentTarget.style.transform = "translateY(-2px)"
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.backgroundColor = primaryColor
-                  e.currentTarget.style.boxShadow = `0 0 25px rgba(0, 217, 255, 0.3)`
+                  e.currentTarget.style.boxShadow = `0 0 20px rgba(168, 85, 247, 0.4)`
                   e.currentTarget.style.transform = "translateY(0)"
                 }}
               >
