@@ -1,10 +1,10 @@
 "use client"
 
 export default function Home() {
-  const bgColor = "#0a0514"
+  const bgColor = "#0a0e1a"
   const textColor = "#ffffff"
-  const primaryColor = "#a855f7"
-  const accentColor = "#d946ef"
+  const primaryColor = "#3b82f6"
+  const accentColor = "#06b6d4"
 
   return (
     <>
@@ -17,11 +17,6 @@ export default function Home() {
           66% { transform: scale(1.05) translate(-5%, 3%); }
         }
         
-        @keyframes gradientFlow {
-          0%, 100% { background-position: 0% center; }
-          50% { background-position: 100% center; }
-        }
-        
         @keyframes pulse {
           0%, 100% { opacity: 0.3; }
           50% { opacity: 0.5; }
@@ -31,20 +26,10 @@ export default function Home() {
           position: absolute;
           inset: 0;
           opacity: 0.6;
-          background: radial-gradient(circle at 20% 50%, rgba(168, 85, 247, 0.2) 0%, transparent 50%),
-                      radial-gradient(circle at 80% 80%, rgba(217, 70, 239, 0.18) 0%, transparent 50%),
-                      radial-gradient(circle at 40% 20%, rgba(168, 85, 247, 0.15) 0%, transparent 50%);
+          background: radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.2) 0%, transparent 50%),
+                      radial-gradient(circle at 80% 80%, rgba(6, 182, 212, 0.18) 0%, transparent 50%),
+                      radial-gradient(circle at 40% 20%, rgba(59, 130, 246, 0.15) 0%, transparent 50%);
           animation: gradientShift 20s ease infinite;
-        }
-        
-        .grid-overlay {
-          position: absolute;
-          inset: 0;
-          background-image: 
-            linear-gradient(rgba(168, 85, 247, 0.5) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(168, 85, 247, 0.5) 1px, transparent 1px);
-          background-size: 80px 80px;
-          opacity: 0.5;
         }
         
         .glow-orb {
@@ -57,7 +42,7 @@ export default function Home() {
         .orb-1 {
           width: 700px;
           height: 700px;
-          background: rgba(168, 85, 247, 0.2);
+          background: rgba(59, 130, 246, 0.2);
           top: -350px;
           right: -350px;
           animation-delay: 0s;
@@ -66,7 +51,7 @@ export default function Home() {
         .orb-2 {
           width: 600px;
           height: 600px;
-          background: rgba(217, 70, 239, 0.18);
+          background: rgba(6, 182, 212, 0.18);
           bottom: -300px;
           left: -300px;
           animation-delay: 4s;
@@ -82,7 +67,7 @@ export default function Home() {
           background: linear-gradient(
             to bottom,
             transparent 50%,
-            rgba(168, 85, 247, 0.02) 50%
+            rgba(59, 130, 246, 0.02) 50%
           );
           background-size: 100% 4px;
           pointer-events: none;
@@ -96,7 +81,7 @@ export default function Home() {
         {/* Header */}
         <header
           className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b"
-          style={{ backgroundColor: `${bgColor}f5`, borderBottomColor: "#a855f715" }}
+          style={{ backgroundColor: `${bgColor}f5`, borderBottomColor: "#3b82f615" }}
         >
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
             <span className="font-bold text-lg" style={{ color: "#ffffff" }}>
@@ -111,9 +96,6 @@ export default function Home() {
         >
           {/* Animated gradient background */}
           <div className="gradient-bg"></div>
-
-          {/* Grid overlay */}
-          <div className="grid-overlay"></div>
           
           {/* Scanline effect */}
           <div className="scanline"></div>
@@ -143,18 +125,18 @@ export default function Home() {
                   border: `1px solid ${primaryColor}`,
                   color: "#ffffff",
                   backgroundColor: "transparent",
-                  boxShadow: `0 0 10px rgba(168, 85, 247, 0.3)`,
+                  boxShadow: `0 0 10px rgba(59, 130, 246, 0.3)`,
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.backgroundColor = `${primaryColor}20`
                   e.currentTarget.style.borderColor = primaryColor
-                  e.currentTarget.style.boxShadow = `0 0 15px rgba(168, 85, 247, 0.4)`
+                  e.currentTarget.style.boxShadow = `0 0 15px rgba(59, 130, 246, 0.4)`
                   e.currentTarget.style.transform = "translateY(-2px)"
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.backgroundColor = "transparent"
                   e.currentTarget.style.borderColor = primaryColor
-                  e.currentTarget.style.boxShadow = `0 0 10px rgba(168, 85, 247, 0.3)`
+                  e.currentTarget.style.boxShadow = `0 0 10px rgba(59, 130, 246, 0.3)`
                   e.currentTarget.style.transform = "translateY(0)"
                 }}
               >
@@ -166,17 +148,17 @@ export default function Home() {
                 style={{ 
                   backgroundColor: primaryColor, 
                   color: "#ffffff",
-                  boxShadow: `0 0 20px rgba(168, 85, 247, 0.4)`,
+                  boxShadow: `0 0 20px rgba(59, 130, 246, 0.4)`,
                   border: `1px solid ${primaryColor}`,
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.backgroundColor = accentColor
-                  e.currentTarget.style.boxShadow = `0 0 25px rgba(217, 70, 239, 0.5)`
+                  e.currentTarget.style.boxShadow = `0 0 25px rgba(6, 182, 212, 0.5)`
                   e.currentTarget.style.transform = "translateY(-2px)"
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.backgroundColor = primaryColor
-                  e.currentTarget.style.boxShadow = `0 0 20px rgba(168, 85, 247, 0.4)`
+                  e.currentTarget.style.boxShadow = `0 0 20px rgba(59, 130, 246, 0.4)`
                   e.currentTarget.style.transform = "translateY(0)"
                 }}
               >
