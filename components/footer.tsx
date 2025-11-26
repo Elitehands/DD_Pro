@@ -2,16 +2,16 @@
 
 export default function Footer() {
   const links = [
-    { label: "Privacy", href: "/privacy" },
-    { label: "Terms & Conditions", href: "/terms" },
-    { label: "Cookie Policy", href: "/cookie-policy" },
-    { label: "DPA", href: "/dpa" },
-    { label: "Contact", href: "mailto:support@duediligencepro.ai" }, // Updated email to .ai domain
+    { label: "Privacy", href: "https://app.duediligencepro.ai/privacy/" },
+    { label: "Terms & Conditions", href: "https://app.duediligencepro.ai/terms/" },
+    { label: "Cookie Policy", href: "https://app.duediligencepro.ai/cookie-policy/" },
+    { label: "DPA", href: "https://app.duediligencepro.ai/dpa/" },
+    { label: "Contact", href: "mailto:support@duediligencepro.ai" },
   ]
 
   return (
     <footer
-      className="w-full py-6 px-4 sm:px-6 lg:px-8 border-t"
+      className="w-full py-3 sm:py-4 px-4 sm:px-6 lg:px-8 border-t"
       style={{
         backgroundColor: "#0a0e1af5",
         borderTopColor: "#3b82f615",
@@ -19,9 +19,9 @@ export default function Footer() {
       }}
     >
       <div className="max-w-6xl mx-auto">
-        <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-6 mb-6">
+        <div className="flex flex-wrap justify-center items-center gap-3 sm:gap-5 mb-3">
           {links.map((link, index) => (
-            <div key={link.label} className="flex items-center gap-4 sm:gap-6">
+            <div key={link.label} className="flex items-center gap-3 sm:gap-5">
               <a
                 href={link.href}
                 className="text-xs sm:text-sm transition-colors duration-300 whitespace-nowrap"
@@ -44,7 +44,6 @@ export default function Footer() {
           ))}
         </div>
 
-        {/* Copyright */}
         <div className="text-center text-xs" style={{ color: "#606070" }}>
           <p>&copy; {new Date().getFullYear()} Due Diligence Pro. All rights reserved.</p>
         </div>
