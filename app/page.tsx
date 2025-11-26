@@ -92,7 +92,7 @@ export default function Home() {
         <Header />
 
         <section
-          className="flex-1 flex items-center justify-center pt-20"
+          className="flex-1 flex items-center justify-center"
           style={{ position: "relative", overflow: "hidden" }}
         >
           <div className="gradient-bg"></div>
@@ -103,14 +103,14 @@ export default function Home() {
           <div className="glow-orb orb-2"></div>
 
           <div
-            className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
+            className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
             style={{ position: "relative", zIndex: 10 }}
           >
-            <h1 className="text-6xl md:text-7xl font-bold mb-4 text-balance leading-tight">
+            <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold mb-6 text-balance leading-tight">
               <span className="gradient-text">Due Diligence Pro</span>
             </h1>
             <p
-              className="text-xl md:text-2xl mb-12 text-balance leading-relaxed font-light"
+              className="text-lg sm:text-xl md:text-2xl mb-10 sm:mb-12 text-balance leading-relaxed font-light max-w-2xl mx-auto"
               style={{ color: "#e0e0ff" }}
             >
               Where active and aspiring dealmakers coordinate their diligence process — all in one place.
