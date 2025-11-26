@@ -1,5 +1,8 @@
 "use client"
 
+import Header from "@/components/header"
+import Footer from "@/components/footer"
+
 export default function Home() {
   const bgColor = "#0a0e1a"
   const textColor = "#ffffff"
@@ -77,30 +80,25 @@ export default function Home() {
         }}
       />
 
-      <main style={{ backgroundColor: bgColor, color: textColor }}>
-        {/* Header */}
-        <header
-          className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b"
-          style={{ backgroundColor: `${bgColor}f5`, borderBottomColor: "#3b82f615" }}
-        >
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-            <span className="font-bold text-lg" style={{ color: "#ffffff" }}>
-              Due Diligence Pro
-            </span>
-          </div>
-        </header>
+      <main
+        style={{
+          backgroundColor: bgColor,
+          color: textColor,
+          minHeight: "100vh",
+          display: "flex",
+          flexDirection: "column",
+        }}
+      >
+        <Header />
 
         <section
-          className="min-h-screen flex items-center justify-center pt-20"
+          className="flex-1 flex items-center justify-center pt-20"
           style={{ position: "relative", overflow: "hidden" }}
         >
-          {/* Animated gradient background */}
           <div className="gradient-bg"></div>
-          
-          {/* Scanline effect */}
+
           <div className="scanline"></div>
 
-          {/* Glow orbs */}
           <div className="glow-orb orb-1"></div>
           <div className="glow-orb orb-2"></div>
 
@@ -145,8 +143,8 @@ export default function Home() {
               <a
                 href="https://app.duediligencepro.ai/sign-up/"
                 className="px-8 py-3 rounded-lg font-medium transition-all duration-300"
-                style={{ 
-                  backgroundColor: primaryColor, 
+                style={{
+                  backgroundColor: primaryColor,
                   color: "#ffffff",
                   boxShadow: `0 0 20px rgba(59, 130, 246, 0.4)`,
                   border: `1px solid ${primaryColor}`,
@@ -167,6 +165,8 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        <Footer />
       </main>
     </>
   )
